@@ -1,0 +1,31 @@
+#include <cstdio>
+using namespace std;
+
+const int maxn = 210;
+int store_number[maxn];
+
+int main()
+{
+    int number_quantity,finded_subscript,number,wanted_number;
+    printf("please input the quantity of numbers:");
+    scanf("%d",&number_quantity);
+    for(int i = 0;i < number_quantity;++i)
+    {
+        printf("input number[%d]:",i);
+        scanf("%d",&number);
+        store_number[i] = number;
+    }
+    printf("please input wanted number:");
+    scanf("%d",&wanted_number);
+    for(int i = 0;i < number_quantity;i++)
+    {
+        if(wanted_number == store_number[i])
+        {
+            finded_subscript = i;
+            break;
+        }
+        finded_subscript = -1;
+    }
+    printf("%d\n", finded_subscript);
+    return 0;
+}
