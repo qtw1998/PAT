@@ -1,0 +1,41 @@
+//********************************************************
+//P进制的x转换为十进制的y
+//int y = 0;int product = 1;
+//while(x != 0)
+//{
+//    y = y + (x / 10) * product;
+//    x = x / 10;
+//    product = product * P;
+//}
+//*******************************************************
+//
+//********************************************************
+//十进制数y转换为Q进制数z
+//int z[40],numplace = 0;
+//do
+//{
+//    z[num++] = y % Q;
+//    y = y / Q;
+//
+//}while(y != 0);
+//********************************************************
+#include <cstdio>
+using namespace std;
+
+int z[31],numplace = 0;
+int main()
+{
+    int A,B,D;
+    scanf("%d%d%d",&A,&B,&D);
+    int sum = A + B;
+    do
+    {
+        z[numplace++] = sum % D;
+        sum = sum / D;
+    }while(sum != 0);
+    for(int i = numplace - 1;i >= 0;i--)
+    {
+        printf("%d", z[i]);
+    }
+    return 0;
+}
