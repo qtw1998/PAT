@@ -1,0 +1,30 @@
+#include <cstdio>
+#include <string>
+using namespace std;
+
+const int maxn = 255;
+bool judge(char* str)
+{
+    unsigned long len = strlen(str);
+    for(int i = 0; i < len / 2;++i)
+    {
+        if(str[i] != str[len - i -1])
+            return false;
+    }
+    return true;
+}
+
+int main()
+{
+    char str[maxn];
+    bool flag;
+    while(gets(str))
+    {
+        flag = judge(str);
+        if(flag)
+            printf("YES");
+        else
+            printf("NO");
+    }
+    return 0;
+}
